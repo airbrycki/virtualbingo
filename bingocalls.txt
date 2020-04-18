@@ -1,0 +1,11 @@
+a<-1:75
+d<-sample(a,75,replace=FALSE) #pulls random sample without replacement for all possible numbers (1-75)
+bingocalls<-ifelse(d<=15,paste0("B",d), #if number is within column, add letter of column to output
+ifelse(d>15&d<=30,paste0("I",d),
+ifelse(d>30&d<=45,paste0("N",d),
+ifelse(d>45&d<=60,paste0("G",d),
+ifelse(d>60&d<=75,paste0("O",d),
+NA
+)))))
+
+data.frame(bingocalls) #lists numbers from the run
