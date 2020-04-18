@@ -6,14 +6,14 @@ jpeg(filename=num, height=7, width=7, units="in", res=300) #set jpeg to save
 par(mai=c(0.2,0,0,0)) #set margins
 plot("n", xlim=c(0,10), ylim=c(0,12), bty="n", xaxt="n", yaxt="n", xlab="", ylab="") #create plot box that is 10x12
 
-segments(0,0, 0, 12, lwd=4)#draw lines for each cell
+segments(0,0, 0, 12, lwd=4)#draw vertical lines for each cell
 segments(2,0, 2, 12, lwd=1)
 segments(4,0, 4, 12, lwd=1)
 segments(6,0, 6, 12, lwd=1)
 segments(8,0, 8, 12, lwd=1)
 segments(10,0, 10, 12, lwd=4)
 
-segments(0,0,10,0, lwd=4)
+segments(0,0,10,0, lwd=4)#draw horizontal lines for each cell
 segments(0,2,10,2, lwd=1)
 segments(0,4,10,4, lwd=1)
 segments(0,6,10,6, lwd=1)
