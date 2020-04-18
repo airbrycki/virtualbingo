@@ -1,0 +1,69 @@
+bingocards<- function(x) { #start function
+a<-1:x
+for (val in a) {
+	num<-paste0("card",val,".jpg")
+jpeg(filename=num, height=7, width=7, units="in", res=300) #set jpeg to save
+par(mai=c(0.2,0,0,0)) #set margins
+plot("n", xlim=c(0,10), ylim=c(0,12), bty="n", xaxt="n", yaxt="n", xlab="", ylab="") #create plot box that is 10x12
+
+segments(0,0, 0, 12, lwd=4)#draw lines for each cell
+segments(2,0, 2, 12, lwd=1)
+segments(4,0, 4, 12, lwd=1)
+segments(6,0, 6, 12, lwd=1)
+segments(8,0, 8, 12, lwd=1)
+segments(10,0, 10, 12, lwd=4)
+
+segments(0,0,10,0, lwd=4)
+segments(0,2,10,2, lwd=1)
+segments(0,4,10,4, lwd=1)
+segments(0,6,10,6, lwd=1)
+segments(0,8,10,8, lwd=1)
+segments(0,10,10,10, lwd=2.5)
+segments(0,12,10,12, lwd=4)
+
+text(1, 11, "B", cex=4) #enter BINGO across top
+text(3, 11, "I", cex=4)
+text(5, 11, "N", cex=4)
+text(7, 11, "G", cex=4)
+text(9, 11, "O", cex=4)
+text(5, 5, "FREE!", cex=2)#add free space at middle
+
+b<-sample(1:15, 5, replace=FALSE)#draw random non-duplicated samples by column for each space
+i<-sample(16:30, 5, replace=FALSE)
+n<-sample(31:45, 5, replace=FALSE)
+g<-sample(46:60, 5, replace=FALSE)
+o<-sample(61:75, 5, replace=FALSE)
+
+text(1, 9, b[1], cex=2) #enter the randomly drawn numbers in each space
+text(1, 7, b[2], cex=2)
+text(1, 5, b[3], cex=2)
+text(1, 3, b[4], cex=2)
+text(1, 1, b[5], cex=2)
+
+text(3, 9, i[1], cex=2)
+text(3, 7, i[2], cex=2)
+text(3, 5, i[3], cex=2)
+text(3, 3, i[4], cex=2)
+text(3, 1, i[5], cex=2)
+
+text(5, 9, n[1], cex=2)
+text(5, 7, n[2], cex=2)
+text(5, 3, n[4], cex=2)
+text(5, 1, n[5], cex=2)
+
+text(7, 9, g[1], cex=2)
+text(7, 7, g[2], cex=2)
+text(7, 5, g[3], cex=2)
+text(7, 3, g[4], cex=2)
+text(7, 1, g[5], cex=2)
+
+text(9, 9, o[1], cex=2)
+text(9, 7, o[2], cex=2)
+text(9, 5, o[3], cex=2)
+text(9, 3, o[4], cex=2)
+text(9, 1, o[5], cex=2)
+
+dev.off()
+
+}
+}
